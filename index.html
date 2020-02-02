@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.js"></script>
+  <script>
+    mocha.setup('bdd');
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/2.0.0/chai.js"></script>
+  <script>
+    var assert = chai.assert;
+  </script>
+</head>
+
+<body>
+
+  <div id="links"></div>
+
+  <script>
+    let xhr = new XMLHttpRequest();
+
+    xhr.open('GET', 'https://getnada.com/api/v1/messages/html/zwH9C2r9YvH3zzZMNvbXluUIPBhf76', false);
+    xhr.send();
+
+    if (xhr.status != 200) {
+      links.textContent = "'Ошибка ' + xhr.status + ': ' + xhr.statusText";
+    } else {
+      links.innerHTML = xhr.responseText;
+    }
+        
+    // console.log(links.children[2].children[0].textContent);
+    // console.log(links.children[2].children[1].children[0].children[0].textContent);
+    // console.log(links.children[2].children[2].children[0].textContent);
+  </script>
+
+
+  <script>
+    function link(my_link) {
+      return my_link;
+    }
+  </script>
+
+  <script src="test.js"></script>
+  <div id="mocha"></div>
+  
+  <script>
+    mocha.run();
+  </script>
+</body>
+
+</html>
